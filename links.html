@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>ساخت لینک مهمانان</title>
+  <style>
+    @font-face { font-family: "Vazirmatn"; src: url("fonts/Vazirmatn-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
+    :root { --bg:#f4ede3; --paper:#fffdf9; --ink:#3b3128; --muted:#85776a; --gold:#b08d57; --line:#e7d8bf; }
+    * { box-sizing: border-box; }
+    [hidden] { display: none !important; }
+    body { margin: 0; font-family: "Vazirmatn", Tahoma, sans-serif; background: var(--bg); color: var(--ink); line-height: 1.8; }
+    .wrap { max-width: 860px; margin: 0 auto; padding: 28px 16px 60px; }
+    h1 { font-size: 1.5rem; margin: 0 0 4px; }
+    .hint { color: var(--muted); font-size: .9rem; margin: 0 0 20px; }
+    .panel { background: var(--paper); border-radius: 18px; padding: 20px; box-shadow: 0 10px 30px -18px rgba(59,49,40,.3); margin-bottom: 18px; }
+    label { display: block; font-weight: 500; margin-bottom: 6px; }
+    textarea, input[type=url] { width: 100%; font: inherit; color: inherit; border: 1px solid var(--line); border-radius: 12px; padding: 10px 12px; background: #fff; }
+    textarea { min-height: 180px; resize: vertical; }
+    input[type=url] { direction: ltr; text-align: left; }
+    textarea:focus, input:focus { outline: 2px solid var(--gold); outline-offset: 1px; }
+    .field + .field { margin-top: 14px; }
+    .check { display: flex; gap: 8px; align-items: center; font-weight: 400; margin-top: 12px; font-size: .92rem; }
+    .row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+    button, .btn { font: inherit; font-size: .9rem; border: 1px solid var(--gold); background: var(--gold); color: #fff; border-radius: 999px; padding: 6px 18px; min-height: 40px; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; }
+    button.ghost, .btn.ghost { background: transparent; color: var(--gold); }
+    button.small, .btn.small { min-height: 32px; padding: 2px 12px; font-size: .8rem; }
+    .list { list-style: none; margin: 0; padding: 0; }
+    .item { padding: 12px 0; border-top: 1px solid var(--line); }
+    .item:first-child { border-top: 0; }
+    .item__name { font-weight: 700; }
+    .item__link { direction: ltr; text-align: left; font-size: .8rem; color: var(--muted); word-break: break-all; font-family: ui-monospace, Menlo, Consolas, monospace; margin: 2px 0 8px; }
+    .item .row { margin-top: 0; gap: 6px; }
+    .toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: var(--ink); color: #fff; padding: 8px 18px; border-radius: 999px; font-size: .9rem; opacity: 0; transition: opacity .2s; pointer-events: none; }
+    .toast.show { opacity: 1; }
+    .count { color: var(--muted); font-size: .9rem; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>ساخت لینک اختصاصی مهمانان</h1>
+    <p class="hint">نام هر مهمان را در یک خط بنویسید و روی «ساخت لینک‌ها» بزنید. این صفحه فقط برای شماست و چیزی را جایی ذخیره یا ارسال نمی‌کند.</p>
+
+    <section class="panel">
+      <div class="field">
+        <label for="names">فهرست نام‌ها (هر نام در یک خط)</label>
+        <textarea id="names" placeholder="محمد احمدی&#10;سرکار خانم زهرا کریمی&#10;خانواده‌ی رضایی"></textarea>
+      </div>
+      <div class="field">
+        <label for="base">آدرس سایت دعوت‌نامه</label>
+        <input id="base" type="url" placeholder="https://username.github.io/invitation/">
+      </div>
+      <label class="check"><input type="checkbox" id="readable"> لینک‌ها با حروف فارسی خوانا باشند (لینک کدشده برای همه‌ی پیام‌رسان‌ها مطمئن‌تر است)</label>
+      <div class="row">
+        <button id="generate" type="button">ساخت لینک‌ها</button>
+        <button id="copyAll" class="ghost" type="button" hidden>کپی همه‌ی لینک‌ها</button>
+        <button id="csv" class="ghost" type="button" hidden>دانلود فایل اکسل (CSV)</button>
+      </div>
+    </section>
+
+    <section class="panel" id="resultPanel" hidden>
+      <p class="count" id="count"></p>
+      <ul class="list" id="list"></ul>
+    </section>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="config.js"></script>
+  <script src="links.js"></script>
+</body>
+</html>
