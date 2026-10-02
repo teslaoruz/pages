@@ -32,6 +32,8 @@ body {
   line-height: 1.9;
   background: radial-gradient(ellipse at 50% 0%, var(--bg2), var(--bg1) 70%) fixed, var(--bg1);
 }
+/* تا پاکت باز نشده، صفحه اسکرول نشود */
+.invite:not(.open) { overflow: hidden; }
 
 /* ---------- پس‌زمینه‌ی متحرک ---------- */
 .glow {
