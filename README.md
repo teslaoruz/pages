@@ -4,8 +4,8 @@
 رایگان روی GitHub Pages اجرا می‌شود و به سرور یا پایگاه داده نیاز ندارد.
 
 ```
-https://teslaoruz.github.io/pages/?name=محمد-احمدی   ←  نام «محمد احمدی» نمایش داده می‌شود
-https://teslaoruz.github.io/pages/                   ←  «معلم گرامی» نمایش داده می‌شود
+https://teslaoruz.github.io/invitation/?name=محمد-احمدی   ←  نام «محمد احمدی» نمایش داده می‌شود
+https://teslaoruz.github.io/invitation/                   ←  «معلم گرامی» نمایش داده می‌شود
 ```
 
 ## فایل‌ها
@@ -35,20 +35,20 @@ https://teslaoruz.github.io/pages/                   ←  «معلم گرامی�
 ۶. به **Settings** و سپس **Pages** بروید.
 ۷. در بخش **Source** گزینه‌ی **Deploy from a branch** را انتخاب کنید، شاخه‌ی **main** و پوشه‌ی **/ (root)** را بگذارید و **Save** را بزنید.
 ۸. یکی دو دقیقه صبر کنید و صفحه را تازه کنید. آدرس سایت بالای همین صفحه نمایش داده می‌شود:
-   `https://teslaoruz.github.io/pages/`
+   `https://teslaoruz.github.io/invitation/`
 
 برای تغییرات بعدی، فایل `config.js` را در گیت‌هاب باز کنید، روی آیکون مداد ✏️ بزنید، متن را تغییر دهید و **Commit changes** را بزنید.
 
 ## ۳. ساخت لینک برای مهمانان
 
-۱. صفحه‌ی `https://teslaoruz.github.io/pages/links.html` را باز کنید.
+۱. صفحه‌ی `https://teslaoruz.github.io/invitation/links.html` را باز کنید.
 ۲. نام مهمانان را بنویسید، هر نام در یک خط.
 ۳. روی «ساخت لینک‌ها» و سپس «کپی همه» بزنید و لینک هر نفر را برایش بفرستید.
 
 یا به‌صورت دستی: به انتهای آدرس سایت `?name=` و نام را اضافه کنید و به جای فاصله `-` بگذارید:
 
 ```
-https://teslaoruz.github.io/pages/?name=زهرا-کریمی
+https://teslaoruz.github.io/invitation/?name=زهرا-کریمی
 ```
 
 ---
