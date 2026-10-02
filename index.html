@@ -2,93 +2,36 @@
 <html lang="fa" dir="rtl">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>دعوت‌نامه</title>
-
-  <!-- ✏️ Link preview text (shown by WhatsApp / Telegram when a link is shared).
-       Messengers don't run JavaScript, so edit these two lines by hand. -->
-  <meta name="description" content="با کمال مسرت از شما دعوت می‌کنیم.">
-  <meta property="og:title" content="دعوت‌نامه">
-  <meta property="og:description" content="با کمال مسرت از شما دعوت می‌کنیم.">
-  <meta property="og:type" content="website">
-  <meta name="theme-color" content="#f7f1e8">
-
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%23b08d57'/%3E%3Cpath d='M16 8c3 4 3 12 0 16-3-4-3-12 0-16z' fill='%23fff'/%3E%3C/svg%3E">
-
-
-  <!-- Persian font Vazirmatn is self-hosted in /fonts (fast, works even where Google Fonts is blocked) -->
-  <link rel="preload" href="fonts/Vazirmatn-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>دعوت‌نامه‌ی جشن روز معلم</title>
+  <!-- متنی که واتساپ و تلگرام زیر لینک نشان می‌دهند (در صورت نیاز تغییر دهید) -->
+  <meta property="og:title" content="دعوت‌نامه‌ی جشن روز معلم">
+  <meta property="og:description" content="با کمال احترام از شما دعوت می‌کنیم.">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main class="stage">
-    <article class="card" id="card" aria-live="polite">
-      <!-- Decorative corners -->
-      <span class="corner corner--tr" aria-hidden="true"></span>
-      <span class="corner corner--tl" aria-hidden="true"></span>
-      <span class="corner corner--br" aria-hidden="true"></span>
-      <span class="corner corner--bl" aria-hidden="true"></span>
+  <main class="card">
+    <!-- این بخش‌ها به‌طور خودکار از فایل config.js پر می‌شوند -->
+    <p class="title" data-text="title"></p>
+    <div class="line"></div>
 
-      <!-- All text below is filled in automatically from config.js -->
-      <p class="top-line reveal" data-field="topLine"></p>
+    <p class="greeting" id="greeting"></p>
+    <h1 class="name" id="name" dir="auto"></h1>
 
-      <svg class="ornament reveal" viewBox="0 0 120 24" aria-hidden="true">
-        <path d="M2 12h44M74 12h44" />
-        <path d="M60 3c5 5 5 13 0 18-5-5-5-13 0-18z" />
-        <circle cx="50" cy="12" r="2" /><circle cx="70" cy="12" r="2" />
-      </svg>
+    <p class="message" data-text="message"></p>
 
-      <header class="greeting reveal">
-        <p class="greeting__label" id="greetingLabel"></p>
-        <h1 class="greeting__name" id="guestName" dir="auto"></h1>
-      </header>
+    <ul class="details">
+      <li data-row="date"><span>تاریخ</span><b data-text="date"></b></li>
+      <li data-row="time"><span>ساعت</span><b data-text="time"></b></li>
+      <li data-row="place"><span>مکان</span><b><span data-text="place"></span><small data-text="address"></small></b></li>
+    </ul>
 
-      <p class="message reveal" data-field="message"></p>
+    <a class="btn" id="map" target="_blank" rel="noopener" hidden>مسیریابی</a>
 
-      <div class="event reveal">
-        <p class="event__title" data-field="title"></p>
-        <p class="event__hosts" data-field="hosts"></p>
-      </div>
-
-      <dl class="details reveal">
-        <div class="details__row" data-row="dateText">
-          <dt>تاریخ</dt><dd data-field="dateText"></dd>
-        </div>
-        <div class="details__row" data-row="timeText">
-          <dt>زمان</dt><dd data-field="timeText"></dd>
-        </div>
-        <div class="details__row" data-row="venueName">
-          <dt>مکان</dt>
-          <dd>
-            <span data-field="venueName"></span>
-            <small data-field="venueAddress"></small>
-          </dd>
-        </div>
-      </dl>
-
-      <div class="countdown reveal" id="countdown" hidden>
-        <div><b data-unit="days">۰</b><span>روز</span></div>
-        <div><b data-unit="hours">۰</b><span>ساعت</span></div>
-        <div><b data-unit="minutes">۰</b><span>دقیقه</span></div>
-        <div><b data-unit="seconds">۰</b><span>ثانیه</span></div>
-      </div>
-
-      <div class="actions reveal">
-        <a class="btn" id="mapBtn" target="_blank" rel="noopener" hidden>مسیریابی</a>
-        <button class="btn btn--ghost" id="calBtn" type="button" hidden>افزودن به تقویم</button>
-        <a class="btn btn--ghost" id="callBtn" hidden></a>
-      </div>
-
-      <p class="closing reveal" data-field="closing"></p>
-      <p class="signature reveal" data-field="signature"></p>
-    </article>
+    <p class="closing" data-text="closing"></p>
+    <p class="signature" data-text="signature"></p>
   </main>
 
-  <noscript>
-    <p class="noscript">برای مشاهده‌ی دعوت‌نامه، لطفاً جاوااسکریپت مرورگر را فعال کنید.</p>
-  </noscript>
-
-  <!-- config.js holds all the invitation text — edit that file. -->
   <script src="config.js"></script>
   <script src="script.js"></script>
 </body>
