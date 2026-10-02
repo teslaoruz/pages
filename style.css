@@ -282,7 +282,9 @@ body {
     shimmer 4.5s calc(2.2s + var(--i) * .2s) ease-in-out infinite;
 }
 
-.message { margin-top: 22px; font-size: 1.05rem; }
+.bismillah { margin-bottom: 14px; color: var(--muted); font-size: .9rem; }
+.quote   { margin-top: 22px; color: var(--accent); font-style: italic; white-space: pre-line; }
+.message { margin-top: 16px; font-size: 1.05rem; white-space: pre-line; }
 
 .details {
   display: grid;
@@ -335,7 +337,7 @@ body {
   animation: sweep 3s 3s ease-in-out infinite;
 }
 
-.closing   { margin-top: 26px; color: var(--muted); }
+.closing   { margin-top: 26px; color: var(--muted); white-space: pre-line; }
 .signature { margin-top: 4px; color: var(--accent); font-weight: 800; }
 
 /* ---------- کاغذ رنگی ---------- */
